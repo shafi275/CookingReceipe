@@ -1,6 +1,6 @@
  {% extends "base.html" %}
 
-{% block start %}
+{% block content %}
 <div class="container mt-4">
   <h2>Add a New Recipe</h2>
   <form method="POST" enctype="multipart/form-data">
@@ -8,17 +8,17 @@
     
     <div class="mb-3">
       <label for="id_name" class="form-label">Recipe Name</label>
-      <input type="text" name="name" id="id_name" class="form-control" required>
+      <input type="text" name=" receipe_name"  class="form-control" required>
     </div>
 
     <div class="mb-3">
       <label for="id_description" class="form-label">Recipe Description</label>
-      <textarea name="description" id="id_description" class="form-control" rows="4" required></textarea>
+      <textarea name=" receipe_desc" class="form-control" rows="4" required></textarea>
     </div>
 
     <div class="mb-3">
       <label for="id_image" class="form-label">Upload an Image</label>
-      <input type="file" name="image" id="id_image" class="form-control" required>
+      <input type="file" name=" receipe_image"  class="form-control" required>
     </div>
 
     <button type="submit" class="btn btn-primary">Add Recipe</button>
