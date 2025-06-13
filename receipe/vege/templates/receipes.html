@@ -1,4 +1,4 @@
- {% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 <div class="container mt-4">
@@ -8,20 +8,45 @@
     
     <div class="mb-3">
       <label for="id_name" class="form-label">Recipe Name</label>
-      <input type="text" name=" receipe_name"  class="form-control" required>
+      <input type="text" name="receipe_name" class="form-control" required>
     </div>
 
     <div class="mb-3">
       <label for="id_description" class="form-label">Recipe Description</label>
-      <textarea name=" receipe_desc" class="form-control" rows="4" required></textarea>
+      <textarea name="receipe_desc" class="form-control" rows="4" required></textarea>
     </div>
 
     <div class="mb-3">
       <label for="id_image" class="form-label">Upload an Image</label>
-      <input type="file" name=" receipe_image"  class="form-control" required>
+      <input type="file" name="receipe_image" class="form-control" required>
     </div>
 
     <button type="submit" class="btn btn-primary">Add Recipe</button>
   </form>
+
+  <hr class="my-4">
+
+  <h4 class="mb-3">All Recipes</h4>
+  <table class="table table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Recipe Name</th>
+        <th>Recipe Description</th>
+        <th>Recipe Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for recipe in recipes %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ recipe.receipe_name }}</td>
+        <td>{{ recipe.receipe_desc }}</td>
+        <td>{{ recipe.receipe_image }}</td>
+         
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
 {% endblock %}
