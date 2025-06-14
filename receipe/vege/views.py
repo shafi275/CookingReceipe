@@ -1,5 +1,5 @@
 
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
 
 def receipes(request):
@@ -21,4 +21,4 @@ def receipes(request):
 def delete_recipe(request,id):
     queryset=Receipe.objects.get(id=id)
     queryset.delete()
-    return redirect('/recipes/')
+    return redirect('/receipes/')
