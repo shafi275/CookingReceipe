@@ -34,6 +34,7 @@
         <th>Recipe Name</th>
         <th>Recipe Description</th>
         <th>Recipe Image</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -42,8 +43,8 @@
         <td>{{ forloop.counter }}</td>
         <td>{{ recipe.receipe_name }}</td>
         <td>{{ recipe.receipe_desc }}</td>
-        <td>{{ recipe.receipe_image }}</td>
-         
+        <td><img src="{{ recipe.receipe_image.url }}" style="height:100px;"></td>
+        <td><a href="/delete_recipe/{{recipe.id}}/" class ="btn btn-danger">Delete</a></td>
       </tr>
       {% endfor %}
     </tbody>
